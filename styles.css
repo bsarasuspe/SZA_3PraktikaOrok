@@ -35,7 +35,6 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  margin-left: 240px;
 }
 
 li {
@@ -107,10 +106,12 @@ button {
     width: 100%;
     border-radius: 5px;
     font-weight: bold;
+    transition: opacity 0.2s;
 }
 
 button:hover {
   opacity: 0.8;
+  transition: opacity 0.2s;
 }
 
 #footer{
@@ -166,9 +167,9 @@ button:hover {
 }
 
 #kategoria:hover{
-	padding:5px 5px 5px 25px;
+	padding:5px 5px 5px 20px;
 	background-color:#eaded8;
-	transition: padding 2s, background-color 0.5s;
+	transition: padding 0.5s, background-color 0.5s;
 }
 
 #liburuaContainer{
@@ -177,5 +178,64 @@ button:hover {
 	height:200px;
 	float:left;
 	border-radius:5px;
-	background:black
+	background:black;
+	overflow:hidden;
+	cursor:pointer;
+	transition: opacity 0.2s;
+}
+
+#liburuaContainer:hover{
+	opacity:0.8;
+	transition: opacity 0.2s;
+}
+
+#liburuaContainer img{
+	max-width:100%;
+}
+
+#liburuaTitle{
+	background-color: #f3eae5d9;
+    height: 39px;
+    font-weight: bold;
+    margin-top: -77px;
+    position: absolute;
+    font-size: 13px;
+    padding: 10px;
+    width: 122px;
+    border-radius: 0px 0px 5px 5px;
+}
+
+#liburuOrriaContainer{
+	width:100%;
+	color:#442727;
+	min-height:100px;
+	float:left;
+	background-color: #fffaf7;
+    padding: 15px;
+    border-radius: 5px;
+    border: 2px solid #c1bbb8;
+}
+
+#liburuaIrudia{
+	width:200px;
+	float:left;
+	border-radius:5px;
+	overflow:hidden;
+	height:300px;
+	background:black;
+}
+
+#liburuaIrudia img{
+	max-width:100%;
+}
+
+#liburuaInfo{
+	width: 780px;
+	float:left;
+	margin-left:20px;
+}
+
+span.liburuaTitulua{
+	font-size:25px;
+	font-weight:bold;
 }

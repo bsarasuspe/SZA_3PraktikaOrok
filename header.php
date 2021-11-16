@@ -13,7 +13,8 @@
 			<div id="headertext">LIBURUTEGIA</div>
 		</div>
 		<div id="nav">
-			<ul>
+			<div style="width:1000px;margin:auto;">
+							<ul>
 			  <li><a href="index.php"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="15" height="15" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
    <polyline points="5 12 3 12 12 3 21 12 19 12"></polyline>
@@ -33,5 +34,7 @@
    <path d="M16 11h6m-3 -3v6"></path>
 </svg> Erregistratu</a></li>
 			</ul>
+			</div>
+
 		</div>
 	</body>

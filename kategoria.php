@@ -48,7 +48,7 @@
    <line x1="12" y1="6" x2="12" y2="19"></line>
    <line x1="21" y1="6" x2="21" y2="19"></line>
 
-</svg>  Azken liburuak:</b><br>
+</svg>  Kategoria:</b><br>
 			<div id="liburuaContainer"><img src="https://i.kinja-img.com/gawker-media/image/upload/s--AUsfSKba--/c_scale,f_auto,fl_progressive,q_80,w_800/18eqlwy2pur67jpg.jpg">
 				<div id="liburuaTitle">Harry Potter</div>
 			</div>
