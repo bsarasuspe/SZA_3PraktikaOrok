@@ -86,7 +86,7 @@ li a:hover {
   stroke-width: 1;
 }
 
-input[type=text], input[type=password], input[type=email] {
+input[type=text], input[type=password], input[type=email], input[type=date] {
 	width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -216,13 +216,24 @@ button:hover {
     border: 2px solid #c1bbb8;
 }
 
+#liburuaGehituContainer{
+	width:500px;
+	color:#442727;
+	min-height:100px;
+	background-color: #fffaf7;
+	margin:auto;
+    padding: 15px;
+    border-radius: 5px;
+    border: 2px solid #c1bbb8;
+}
+
 #liburuaIrudia{
-	width:200px;
-	float:left;
-	border-radius:5px;
-	overflow:hidden;
-	height:300px;
-	background:black;
+	width: 240px;
+    float: left;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 360px;
+    background: black;
 }
 
 #liburuaIrudia img{
@@ -230,12 +241,49 @@ button:hover {
 }
 
 #liburuaInfo{
-	width: 780px;
-	float:left;
-	margin-left:20px;
+	width: 740px;
+    float: left;
+    margin-left: 20px;
 }
 
 span.liburuaTitulua{
 	font-size:25px;
 	font-weight:bold;
+}
+
+select {
+	width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 2px solid #c6c0bc;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+
+textarea {
+	width: 100%;
+	resize:none;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 2px solid #c6c0bc;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+
+  #liburuLista{
+  	padding:5px 12px 5px 13px;
+  	background-color:#f0ecea;
+  	border-radius:5px;
+  	margin-top: 8px;
+  }
+
+  #liburuLista:hover{
+	background-color:#eaded8;
+	transition: background-color 0.5s;
+}
+
+#ezabatuLinka{
+	float:right;
 }

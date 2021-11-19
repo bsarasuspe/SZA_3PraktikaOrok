@@ -1,9 +1,25 @@
 <!DOCTYPE html>
 <html>   
 	<?php include 'header.php'?>
+	<?php include 'dbconfig.php'?>
 	<body>
 
-	<div id="content">
+	<?php
+
+	global $zerbitzaria, $erabiltzailea, $gakoa, $db;
+	                
+	$nireSQLI = new mysqli($zerbitzaria, $erabiltzailea, $gakoa, $db);
+
+	if($nireSQLI->connect_error) {
+		die("DB-ra konexio bat egitean errore bat egon da: " . $nireSQLI->connect_error);
+	}
+
+	$result = $nireSQLI->query("SELECT eposta AS total FROM erabiltzaileak");
+
+	$erabiltzaileKop = $result->num_rows;
+
+	?>
+		<div id="content">
 		<div id="column1">
 			<b><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="15" height="15" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -34,7 +50,7 @@
    <rect x="15" y="4" width="6" height="16" rx="1"></rect>
    <line x1="4" y1="20" x2="18" y2="20"></line>
 </svg> Estadistikak: </b>
-		<div id="estadistika">Erabiltzaile erregistratuak: 20</div>
+		<div id="estadistika">Erabiltzaile erregistratuak: <?php echo ($erabiltzaileKop) ?></div>
 		<div id="estadistika">Liburu kopurua: 230</div>
 		</div>
 
