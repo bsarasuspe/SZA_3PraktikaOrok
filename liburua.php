@@ -93,7 +93,6 @@
 					                foreach($xml->liburua as $liburua){
 					                    if($liburua["id"]==$_GET['id']){
 					                    	$aurkitua = true;
-					                    	$eposta = $_SESSION['eposta'];
 					                    	echo "<div id='liburuaLeft'><div id='liburuaIrudia'><img src='$liburua->irudia'></div>";
 					                    	if(isset($_SESSION['kautotua']) && ($_SESSION['kautotua'])){
 												$ema = $nireSQLI->query("SELECT * FROM gustoko_liburuak 

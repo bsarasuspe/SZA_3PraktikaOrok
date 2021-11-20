@@ -2,12 +2,6 @@
 <html>
 	<?php include 'header.php'?>
 	<?php include 'dbconfig.php'?>
-	<style>
-		#footer{
-			position: fixed;
-  			bottom: 0;
-		}
-	</style>
 	<body>
 	<?php
         if (isset($_SESSION["kautotua"]) && $_SESSION["kautotua"] == "BAI") {
@@ -15,6 +9,7 @@
             exit();
         }
     ?>
+    <div id="content">
 		<div id="loginKutxa">
 			<div id="loginKutxaTitle"><b>LOGEATU</b></div>
 			<form action="" method="post">
@@ -57,4 +52,5 @@
             }
             ?>
 		</div>
+    </div>
 	<?php include 'footer.php'?>
