@@ -1,7 +1,10 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 	<?php include 'header.php'?>
-  <?php include 'DbConfig.php';?>
+  <?php include 'dbconfig.php';?>
 	<body>
 		<div id="content">
 			<div id="liburuaGehituContainer">

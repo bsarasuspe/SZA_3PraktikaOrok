@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-11-2021 a las 18:37:24
+-- Tiempo de generación: 20-11-2021 a las 19:47:21
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 7.3.31
 
@@ -42,6 +42,25 @@ INSERT INTO `erabiltzaileak` (`eposta`, `izena`, `pasahitza`, `mota`) VALUES
 ('admin@ehu.eus', 'Admin Admin', 'admin000', 1),
 ('bsarasua@ehu.eus', 'Beñat Sarasua', 'bsarasua1', 0);
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `gustoko_liburuak`
+--
+
+CREATE TABLE `gustoko_liburuak` (
+  `user_eposta` varchar(254) NOT NULL,
+  `liburu_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `gustoko_liburuak`
+--
+
+INSERT INTO `gustoko_liburuak` (`user_eposta`, `liburu_id`) VALUES
+('admin@ehu.eus', 2),
+('bsarasua@ehu.eus', 2);
+
 --
 -- Índices para tablas volcadas
 --
@@ -51,6 +70,12 @@ INSERT INTO `erabiltzaileak` (`eposta`, `izena`, `pasahitza`, `mota`) VALUES
 --
 ALTER TABLE `erabiltzaileak`
   ADD PRIMARY KEY (`eposta`);
+
+--
+-- Indices de la tabla `gustoko_liburuak`
+--
+ALTER TABLE `gustoko_liburuak`
+  ADD PRIMARY KEY (`user_eposta`,`liburu_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

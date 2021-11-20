@@ -1,6 +1,6 @@
 <?php
 
-include 'DbConfig.php';
+include 'dbconfig.php';
 
 global $zerbitzaria, $erabiltzailea, $gakoa, $db;
 $nireSQLI = new mysqli($zerbitzaria, $erabiltzailea, $gakoa, $db);

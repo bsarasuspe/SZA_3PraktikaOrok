@@ -9,8 +9,8 @@ if ($lokal){
 }
 else{
     $zerbitzaria="localhost";
-    $erabiltzailea="T52";
-    $gakoa="MjP0lBClwyn81";
-    $db="db_T52";
+    $erabiltzailea="id17980161_admin";
+    $gakoa="!v7@GzPHK/[lC?K9";
+    $db="id17980161_sza";
 }
 ?>
