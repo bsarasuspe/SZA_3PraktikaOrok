@@ -10,11 +10,13 @@
    <line x1="13" y1="8" x2="15" y2="8"></line>
    <line x1="13" y1="12" x2="15" y2="12"></line>
 </svg> Gehitu liburua:</b>
-			<form action="/action_page.php" method="post">
+			<form action="" method="post">
   				<div class="container">
   					<br>
   					<label for="titulua"><b>Titulua:</b></label>
     				<input type="text" placeholder="Sartu liburuaren titulua" name="titulua" required>
+            <label for="egilea"><b>Egilea:</b></label>
+            <input type="text" placeholder="Sartu liburuaren egilea" name="egilea" required>
     				<label for="hizkuntza"><b>Hizkuntza:</b></label>
     				<select name="hizkuntza">
     					<option selected>Euskara</option>
@@ -29,9 +31,9 @@
     					<option>Zientzia fikzioa</option>
     				</select>  
     				<label for="data"><b>Data:</b></label>
-    				<input type="date" name="data" required>   
-    				<label for="data"><b>Sinopsia:</b></label>
-    				<textarea id="w3review" name="w3review" rows="4" cols="50"></textarea>
+    				<input type="date" name="date" required>   
+    				<label for="sinopsia"><b>Sinopsia:</b></label>
+    				<textarea id="sinopsia" name="sinopsia" rows="4" cols="50"></textarea>
     				<label for="irudia"><b>Irudiaren url-a:</b></label>
     				<input type="text" placeholder="Sartu irudiaren url-a" name="irudia" required> 
             <label for="deskarga"><b>Deskarga url-a:</b></label>
@@ -43,3 +45,26 @@
 			</div>
 		</div>
 	<?php include 'footer.php'?>
+
+<?php
+        if (isset($_POST['titulua'])){
+          if($_POST['titulua'])
+            $fitxategia = "xml/liburuak.xml";
+            $xml = simplexml_load_file($fitxategia);
+            $azkenid = $xml["azkenid"];
+            $azkenid = $azkenid + 1;
+            $xml["azkenid"] = $azkenid;
+            $xmlliburua = $xml->addChild('liburua');
+            $xmlliburua -> addAttribute('id', $azkenid); 
+            $xmltitulua = $xmlliburua -> addChild('titulua', $_POST['titulua']);
+            $xmlegilea = $xmlliburua -> addChild('egilea', $_POST['egilea']);
+            $xmlhizkuntza = $xmlliburua -> addChild('hizkuntza', $_POST['hizkuntza']);
+            $xmlkategoria = $xmlliburua -> addChild('kategoria', $_POST['kategoria']);
+            $new_date = date('Y-m-d', strtotime($_POST['date']));
+            $xmldata = $xmlliburua -> addChild('data', $new_date);
+            $xmlsinopsia = $xmlliburua -> addChild('sinopsia', $_POST['sinopsia']);
+            $xmlirudia = $xmlliburua -> addChild('irudia', $_POST['irudia']);
+            $xmldeskarga = $xmlliburua -> addChild('deskarga', $_POST['deskarga']);
+            $xml->asXML('xml/liburuak.xml');
+        }
+    ?>

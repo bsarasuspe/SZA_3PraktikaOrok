@@ -201,7 +201,7 @@ button:hover {
 	background-color: #f3eae5d9;
   height: 39px;
   font-weight: bold;
-  margin-top: -77px;
+  margin-top: -58px;
   position: absolute;
   font-size: 13px;
   padding: 10px;
@@ -250,9 +250,11 @@ button:hover {
 }
 
 #liburuaInfo{
-	width: 740px;
-    float: left;
-    margin-left: 20px;
+  width: 390px;
+  float: left;
+  margin-left: 20px;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 span.liburuaTitulua{
@@ -295,6 +297,7 @@ textarea {
 
 #ezabatuLinka{
 	float:right;
+  margin-left:8px;
 }
 
 #perfilekoIrudia{
@@ -315,4 +318,27 @@ textarea {
   margin-top:25px;
   margin-bottom:10px;
   font-size:14px;
+}
+
+.ezabatuButton{
+  padding: 0;
+  color: #442727;
+  margin: 0;
+  background-color: #eaded800;
+  font-weight: normal;
+  font-size: 14px;
+  text-decoration: underline;
+}
+
+#errorbox{
+  border-radius:5px;
+  padding:6px 10px 6px 10px;
+  background-color:#fc8d8d;
+  color:white;
+}
+
+#errorbox a{
+  color:white;
+  text-decoration:underline;
+  font-weight:bold;
 }

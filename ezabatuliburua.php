@@ -9,16 +9,25 @@
    <path d="M6 4h11a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-11a1 1 0 0 1 -1 -1v-14a1 1 0 0 1 1 -1m3 0v18"></path>
    <line x1="13" y1="8" x2="15" y2="8"></line>
    <line x1="13" y1="12" x2="15" y2="12"></line>
-</svg> Ezabatu liburua:</b>
+</svg> Kudeatu liburuak:</b>
 
                 <?php
                 $aurkitua = false;
                       $fitxategia = "xml/liburuak.xml";
                       $xml = simplexml_load_file($fitxategia);
-                          foreach($xml->liburua as $liburua){
+
+                      $liburuak = array_reverse($xml->xpath('liburua'));
+                          foreach($liburuak as $liburua){
                                 $aurkitua = true;
-                                echo "<div id='liburuLista'>$liburua->titulua
-                                <div id='ezabatuLinka'>Ezabatu</div>
+                                echo "<div id='liburuLista'><b>$liburua->titulua</b> - $liburua->egilea
+                                <div id='ezabatuLinka'><form id='borratu' name='borratu' method='post' action='ezabatuliburuapost.php'>
+                        <input id='id' name='id' type='hidden' value='$liburua[id]'>
+                        <button type='submit' id='ezabatu' class='ezabatuButton'>Ezabatu</button>
+                        </form></div>
+                        <div id='ezabatuLinka'><form id='borratu' name='borratu' method='post' action='ezabatuliburuapost.php'>
+                        <input id='id' name='id' type='hidden' value='$liburua[id]'>
+                        <button type='submit' id='ezabatu' class='ezabatuButton'>Editatu</button>
+                        </form></div>
                                 </div>";
                       }
                       if ($aurkitua == false){

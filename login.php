@@ -48,10 +48,10 @@
                         $_SESSION["mota"] = $tabladatuak[3];
                         echo "<script> window.location.href = 'index.php';</script>";
                     } else {
-                        echo '<p style="color: red"> Zure erabiltzailea edo pasahitza ez dira zuzenak. </p>';
+                        echo '<div id="errorbox"> Zure erabiltzailea edo pasahitza ez dira zuzenak. </div>';
                     }
                 } else {
-                    echo '<p style="color: red"> Erabiltzailea ez da existitzen.</p>';
+                    echo '<div id="errorbox"> Erabiltzailea ez da existitzen.</div>';
                 }
 
             }

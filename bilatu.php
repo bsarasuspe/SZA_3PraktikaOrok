@@ -93,22 +93,28 @@
    <line x1="12" y1="6" x2="12" y2="19"></line>
    <line x1="21" y1="6" x2="21" y2="19"></line>
 
-</svg>  Azken liburuak:</b><br>
+</svg>  Bilaketaren emaitza:</b><br>
 
 								<?php
-								$aurkitua = false;
-					            $fitxategia = "xml/liburuak.xml";
-					            $xml = simplexml_load_file($fitxategia);
-					            $liburuak = array_reverse($xml->xpath('liburua'));
-					                foreach($liburuak as $liburua){
-					                    	$aurkitua = true;
-					                    	echo "<a href='liburua.php?id=$liburua[id]'><div id='liburuaContainer'><div id='liburuaContainerIrudia'><img src='$liburua->irudia'></div>
-												<div id='liburuaTitle' class='noDecoration'>$liburua->titulua</div>
-												</div></a>";
-					            }
-					            if ($aurkitua == false){
-					            	echo '<center><img src="images/liburua.png" width="150"><br><b>Ez dago libururik.</b></center>';
-					            }
+								if(isset($_GET['search'])){
+									$aurkitua = false;
+						            $fitxategia = "xml/liburuak.xml";
+						            $xml = simplexml_load_file($fitxategia);
+						            $liburuak = array_reverse($xml->xpath('liburua'));
+						                foreach($liburuak as $liburua){
+						                		if(strpos(strtolower($liburua->titulua), $_GET["search"]) !== false){
+						                			$aurkitua = true;
+						                    	echo "<a href='liburua.php?id=$liburua[id]'><div id='liburuaContainer'><div id='liburuaContainerIrudia'><img src='$liburua->irudia'></div>
+													<div id='liburuaTitle' class='noDecoration'>$liburua->titulua</div>
+													</div></a>";
+						                		}     	
+						            }
+						            if ($aurkitua == false){
+						            	echo '<center><img src="images/liburua.png" width="150"><br><b>Ez da libururik aurkitu bilaketa horretan. </b></center>';
+						            }
+								}else{
+									echo '<center><img src="images/liburua.png" width="150"><br><b>Ez da libururik aurkitu bilaketa horretan. </b></center>';
+								}
 								?>
 		</div>
 	</div>
