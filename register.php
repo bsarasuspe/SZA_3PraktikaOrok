@@ -61,7 +61,7 @@ if (isset($_POST['eposta'])) {
         echo "<script>alert('Errorea datu-basean: $mezua')</script>";
         return;
     }
-    header("location: Layout.php");
+    header("location: index.php");
 }
 ?>
 		</div>

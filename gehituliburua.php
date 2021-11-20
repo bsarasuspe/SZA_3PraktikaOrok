@@ -29,6 +29,7 @@
     					<option>Suspensea</option>
     					<option>Fantasia</option>
     					<option>Zientzia fikzioa</option>
+              <option>Mexikanoa</option>
     				</select>  
     				<label for="data"><b>Data:</b></label>
     				<input type="date" name="date" required>   

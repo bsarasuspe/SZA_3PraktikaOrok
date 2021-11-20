@@ -238,11 +238,15 @@ button:hover {
 
 #liburuaIrudia{
 	width: 240px;
-    float: left;
     border-radius: 5px;
     overflow: hidden;
     height: 360px;
     background: black;
+}
+
+#liburuaLeft{
+  width: 240px;
+  float: left;
 }
 
 #liburuaIrudia img{
@@ -341,4 +345,33 @@ textarea {
   color:white;
   text-decoration:underline;
   font-weight:bold;
+}
+
+.gustokoBotoi{
+  border-radius:5px;
+  padding:6px 10px 6px 10px;
+  background-color:#fc8d8d;
+  color:white;
+  margin-top: 10px;
+  text-align:center;
+}
+
+.gustokoBotoi:hover{
+  opacity:0.8;
+  transition: opacity 0.2s;
+}
+
+.ezGustokoBotoi{
+  border-radius:5px;
+  padding:6px 10px 6px 10px;
+  background-color:#a28888;
+  color:white;
+  margin-top: 10px;
+  text-align:center;
+  transition: opacity 0.2s;
+}
+
+.ezGustokoBotoi:hover{
+  opacity:0.8;
+  transition: opacity 0.2s;
 }
