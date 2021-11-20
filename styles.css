@@ -2,8 +2,8 @@ body {
 	background: #f3eae5;
 	margin: 0px;
 	font-family: 'Lato', sans-serif;
-    font-family: 'Roboto', sans-serif;
-    font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif;
 }
 
 #header{
@@ -54,13 +54,12 @@ li a:hover {
 }
 
 #loginKutxa{
-    background-color: #fffaf7;
-    padding: 20px;
-    border-radius: 5px;
-    width: 350px;
-    /* height: 300px; */
-    border: 2px solid #c1bbb8;
-    margin: auto;
+  background-color: #fffaf7;
+  padding: 20px;
+  border-radius: 5px;
+  width: 350px;
+  border: 2px solid #c1bbb8;
+  margin: auto;
 }
 
 #loginKutxaTitle{
@@ -88,25 +87,25 @@ li a:hover {
 
 input[type=text], input[type=password], input[type=email], input[type=date] {
 	width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 2px solid #c6c0bc;
-    box-sizing: border-box;
-    border-radius: 5px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 2px solid #c6c0bc;
+  box-sizing: border-box;
+  border-radius: 5px;
 }
 
 button {
-    background-color: #6e3d3d;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: opacity 0.2s;
+  background-color: #6e3d3d;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: opacity 0.2s;
 }
 
 button:hover {
@@ -134,9 +133,9 @@ button:hover {
 	min-height:100px;
 	float:left;
 	background-color: #fffaf7;
-    padding: 15px;
-    border-radius: 5px;
-    border: 2px solid #c1bbb8;
+  padding: 15px;
+  border-radius: 5px;
+  border: 2px solid #c1bbb8;
 }
 
 #column2{
@@ -146,9 +145,9 @@ button:hover {
 	float:left;
 	margin-left:30px;
 	background-color: #fffaf7;
-    padding: 15px;
-    border-radius: 5px;
-    border: 2px solid #c1bbb8;
+  padding: 15px;
+  border-radius: 5px;
+  border: 2px solid #c1bbb8;
 }
 
 #estadistika{
@@ -193,16 +192,26 @@ button:hover {
 	max-width:100%;
 }
 
+#liburuaContainerIrudia{
+  height:200px;
+  width:142px;
+}
+
 #liburuaTitle{
 	background-color: #f3eae5d9;
-    height: 39px;
-    font-weight: bold;
-    margin-top: -77px;
-    position: absolute;
-    font-size: 13px;
-    padding: 10px;
-    width: 122px;
-    border-radius: 0px 0px 5px 5px;
+  height: 39px;
+  font-weight: bold;
+  margin-top: -77px;
+  position: absolute;
+  font-size: 13px;
+  padding: 10px;
+  width: 122px;
+  border-radius: 0px 0px 5px 5px;
+}
+
+.noDecoration{
+    text-decoration: none;
+    color:#442728;
 }
 
 #liburuOrriaContainer{
@@ -253,37 +262,57 @@ span.liburuaTitulua{
 
 select {
 	width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 2px solid #c6c0bc;
-    box-sizing: border-box;
-    border-radius: 5px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 2px solid #c6c0bc;
+  box-sizing: border-box;
+  border-radius: 5px;
   }
 
 textarea {
 	width: 100%;
 	resize:none;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 2px solid #c6c0bc;
-    box-sizing: border-box;
-    border-radius: 5px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 2px solid #c6c0bc;
+  box-sizing: border-box;
+  border-radius: 5px;
   }
 
-  #liburuLista{
-  	padding:5px 12px 5px 13px;
-  	background-color:#f0ecea;
-  	border-radius:5px;
-  	margin-top: 8px;
-  }
+#liburuLista{
+  padding:5px 12px 5px 13px;
+  background-color:#f0ecea;
+  border-radius:5px;
+  margin-top: 8px;
+}
 
-  #liburuLista:hover{
+#liburuLista:hover{
 	background-color:#eaded8;
 	transition: background-color 0.5s;
 }
 
 #ezabatuLinka{
 	float:right;
+}
+
+#perfilekoIrudia{
+  width:80px;
+  height:80px;
+  margin-top:10px;
+  margin-bottom:10px;
+  border-radius:100px;
+  border: 2px solid #c6c0bc;
+  background-image:url('images/profile.jpg');
+  background-size:cover;
+  float:left;
+}
+
+#perfilaInfo{
+  float:left;
+  margin-left:10px;
+  margin-top:25px;
+  margin-bottom:10px;
+  font-size:14px;
 }

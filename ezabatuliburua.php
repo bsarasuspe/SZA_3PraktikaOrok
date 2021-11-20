@@ -10,21 +10,21 @@
    <line x1="13" y1="8" x2="15" y2="8"></line>
    <line x1="13" y1="12" x2="15" y2="12"></line>
 </svg> Ezabatu liburua:</b>
-        <div id="liburuLista">Harry Potter
-          <div id="ezabatuLinka">Ezabatu</div>
-        </div>
-        <div id="liburuLista">Harry Potter
-          <div id="ezabatuLinka">Ezabatu</div>
-        </div>
-        <div id="liburuLista">Harry Potter
-          <div id="ezabatuLinka">Ezabatu</div>
-        </div>
-        <div id="liburuLista">Harry Potter
-          <div id="ezabatuLinka">Ezabatu</div>
-        </div>
-        <div id="liburuLista">Harry Potter
-          <div id="ezabatuLinka">Ezabatu</div>
-        </div>
+
+                <?php
+                $aurkitua = false;
+                      $fitxategia = "xml/liburuak.xml";
+                      $xml = simplexml_load_file($fitxategia);
+                          foreach($xml->liburua as $liburua){
+                                $aurkitua = true;
+                                echo "<div id='liburuLista'>$liburua->titulua
+                                <div id='ezabatuLinka'>Ezabatu</div>
+                                </div>";
+                      }
+                      if ($aurkitua == false){
+                        echo '<center><img src="images/liburua.png" width="150"><br><b>Ez dago libururik.</b></center>';
+                      }
+                ?>
 				</div>
 			</div>
 		</div>

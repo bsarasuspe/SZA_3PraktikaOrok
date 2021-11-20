@@ -19,8 +19,35 @@
 	$erabiltzaileKop = $result->num_rows;
 
 	?>
+	<?php
+			$fitxategia = "xml/liburuak.xml";
+            $xml = simplexml_load_file($fitxategia);
+    ?>
 		<div id="content">
 		<div id="column1">
+			<?php
+			if(isset($_SESSION['kautotua']) && ($_SESSION['kautotua']) == "BAI"){
+				echo '<b><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="15" height="15" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+				   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+				   <circle cx="12" cy="7" r="4"></circle>
+				   <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
+				</svg> Erabiltzailea:</b>
+				<div id="perfila">
+					<div id="perfilekoIrudia"></div>
+					<div id="perfilaInfo">'.$_SESSION["izena"].'<br>'.$_SESSION["eposta"].'<br><i>';
+				if($_SESSION["mota"] == 0){
+					echo 'Erabiltzailea';
+				}else{
+					echo 'Administratzailea';
+				}
+					
+					echo '</i></div>
+					<div style="clear: both"></div>
+				</div>';
+			}
+			?>
+
+			
 			<b><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="15" height="15" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
    <circle cx="10" cy="10" r="7"></circle>
@@ -42,6 +69,7 @@
 	<div id="kategoria">Suspensea</div>
 	<div id="kategoria">Fantasia</div>
 	<div id="kategoria">Zientzia-fikzioa</div>
+	<div id="kategoria">Mexikanoa</div>
 <br>
 <b><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chart-bar" width="16" height="16" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -51,7 +79,7 @@
    <line x1="4" y1="20" x2="18" y2="20"></line>
 </svg> Estadistikak: </b>
 		<div id="estadistika">Erabiltzaile erregistratuak: <?php echo ($erabiltzaileKop) ?></div>
-		<div id="estadistika">Liburu kopurua: 230</div>
+		<div id="estadistika">Liburu kopurua: <?php echo "$xml[azkenid]"; ?></div>
 		</div>
 
 
@@ -65,23 +93,22 @@
    <line x1="21" y1="6" x2="21" y2="19"></line>
 
 </svg>  Azken liburuak:</b><br>
-			<div id="liburuaContainer"><img src="https://i.kinja-img.com/gawker-media/image/upload/s--AUsfSKba--/c_scale,f_auto,fl_progressive,q_80,w_800/18eqlwy2pur67jpg.jpg">
-				<div id="liburuaTitle">Harry Potter</div>
-			</div>
-			<div id="liburuaContainer"><img src="https://i.kinja-img.com/gawker-media/image/upload/s--AUsfSKba--/c_scale,f_auto,fl_progressive,q_80,w_800/18eqlwy2pur67jpg.jpg">
-				<div id="liburuaTitle">Harry Potter</div>
-			</div>
-			<div id="liburuaContainer"><img src="https://i.kinja-img.com/gawker-media/image/upload/s--AUsfSKba--/c_scale,f_auto,fl_progressive,q_80,w_800/18eqlwy2pur67jpg.jpg">
-				<div id="liburuaTitle">Harry Potter</div>
-			</div>
-			<div id="liburuaContainer"><img src="https://i.kinja-img.com/gawker-media/image/upload/s--AUsfSKba--/c_scale,f_auto,fl_progressive,q_80,w_800/18eqlwy2pur67jpg.jpg">
-				<div id="liburuaTitle">Harry Potter</div>
-			</div>
-			<div id="liburuaContainer"><img src="https://i.kinja-img.com/gawker-media/image/upload/s--AUsfSKba--/c_scale,f_auto,fl_progressive,q_80,w_800/18eqlwy2pur67jpg.jpg">
-				<div id="liburuaTitle">Harry Potter</div>
-			</div>
 
+								<?php
+								$aurkitua = false;
+					            $fitxategia = "xml/liburuak.xml";
+					            $xml = simplexml_load_file($fitxategia);
+					                foreach($xml->liburua as $liburua){
+					                    	$aurkitua = true;
+					                    	echo "<a href='liburua.php?id=$liburua[id]'><div id='liburuaContainer'><div id=''><img src='$liburua->irudia'></div>
+												<div id='liburuaTitle' class='noDecoration'>$liburua->titulua</div>
+												</div></a>";
+					            }
+					            if ($aurkitua == false){
+					            	echo '<center><img src="images/liburua.png" width="150"><br><b>Ez dago libururik.</b></center>';
+					            }
+								?>
 		</div>
 	</div>
-		
+	<div style="clear: both"></div>
 	<?php include 'footer.php'?>
