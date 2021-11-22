@@ -375,3 +375,21 @@ textarea {
   opacity:0.8;
   transition: opacity 0.2s;
 }
+
+.registerlogin-info{
+  font-size:13px;
+}
+
+.registerlogin-info a{
+  text-decoration:underline;
+  color:black;
+}
+
+#success-alert{
+  background-color:#71ba73;
+  color:white;
+  text-align:center;
+  border-radius:5px;
+  padding:5px;
+  margin-bottom:5px;
+}

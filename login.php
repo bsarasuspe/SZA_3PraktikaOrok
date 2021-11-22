@@ -54,6 +54,7 @@ session_start();
 
             }
             ?>
+            <span class="registerlogin-info">Ez bazaude erregistratuta oraindik, erregistratu <a href="register.php">hemen</a>.</span>
 		</div>
     </div>
 	<?php include 'footer.php'?>

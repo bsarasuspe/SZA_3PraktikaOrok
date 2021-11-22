@@ -6,7 +6,16 @@ session_start();
 	<?php include 'header.php'?>
 	<body>
 		<div id="content">
+
 			<div id="liburuaGehituContainer">
+        <?php
+        if(isset($_GET["editatu"])){
+          echo "<div id='success-alert'>Liburua ongi editatu da</div>";
+        }
+        if(isset($_GET["ezabatu"])){
+          echo "<div id='success-alert'>Liburua ongi ezabatu da</div>";
+        }
+      ?>
 				<b><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-notebook" width="15" height="15" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
    <path d="M6 4h11a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-11a1 1 0 0 1 -1 -1v-14a1 1 0 0 1 1 -1m3 0v18"></path>

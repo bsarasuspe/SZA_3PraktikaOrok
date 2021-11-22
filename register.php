@@ -64,5 +64,6 @@ if (isset($_POST['eposta'])) {
     header("location: index.php");
 }
 ?>
+<span class="registerlogin-info">Dagoeneko erregistratuta bazaude, logeatu <a href="login.php">hemen</a>.</span>
 		</div>
 	<?php include 'footer.php'?>

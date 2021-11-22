@@ -85,7 +85,7 @@ session_start();
                     $liburua->irudia = $_POST['irudia'];
                     $liburua->deskarga = $_POST['deskarga']; 
                     $xml->asXML('xml/liburuak.xml');
-                    echo "<script> window.location.href = 'kudeatuliburuak.php';</script>";         
+                    echo "<script> window.location.href = 'kudeatuliburuak.php?editatu=true';</script>";         
                 }
             }
 

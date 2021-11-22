@@ -7,6 +7,11 @@ session_start();
 	<body>
 		<div id="content">
 			<div id="liburuaGehituContainer">
+                <?php
+        if(isset($_GET["gehitu"])){
+          echo "<div id='success-alert'>Liburua ongi gehitu da</div>";
+        }
+      ?>
 				<b><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-notebook" width="15" height="15" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
    <path d="M6 4h11a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-11a1 1 0 0 1 -1 -1v-14a1 1 0 0 1 1 -1m3 0v18"></path>
@@ -70,5 +75,6 @@ session_start();
             $xmlirudia = $xmlliburua -> addChild('irudia', $_POST['irudia']);
             $xmldeskarga = $xmlliburua -> addChild('deskarga', $_POST['deskarga']);
             $xml->asXML('xml/liburuak.xml');
+            echo "<script> window.location.href = 'gehituliburua.php?gehitu=true';</script>";
         }
     ?>

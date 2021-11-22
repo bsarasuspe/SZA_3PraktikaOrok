@@ -11,5 +11,5 @@
 		}
 	}
 
-header('Location: kudeatuliburuak.php');
+header('Location: kudeatuliburuak.php?ezabatu=true');
 ?>
