@@ -125,7 +125,7 @@ session_start();
 											<p><b>Argitaratze data:</b> $liburua->data</p>
 											<p><b>Sinopsia:</b> $liburua->sinopsia</p>";
 											if(isset($_SESSION['kautotua']) && ($_SESSION['kautotua']) == "BAI"){
-												echo "<button action='$liburua->deskarga'>Deskargatu liburua</button>";
+												echo "<a href='$liburua->deskarga' target='_blank'><button action='$liburua->deskarga'>Deskargatu liburua</button></a>";
 											}else{
 												echo "<div id='errorbox'>Liburua deskargatzeko erabiltzaile erregistratua izan behar zara! <a href='register.php'>Erregistratu</a> edo <a href='login.php'>logeatu</a> zaitez.</div>";
 											}

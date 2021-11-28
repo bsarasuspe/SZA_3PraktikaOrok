@@ -4,6 +4,7 @@ session_start();
 <!DOCTYPE html>
 <html>
 	<?php include 'header.php'?>
+    <script type="text/javascript" src="./js/AddBookValidation.js"></script>
 	<body>
 		<div id="content">
 			<div id="liburuaGehituContainer">
@@ -18,13 +19,15 @@ session_start();
    <line x1="13" y1="8" x2="15" y2="8"></line>
    <line x1="13" y1="12" x2="15" y2="12"></line>
 </svg> Gehitu liburua:</b>
-			<form action="" method="post">
+			<form name="form" id="form" action="" method="post" onsubmit="return AddBookValidation()">
   				<div class="container">
   					<br>
   					<label for="titulua"><b>Titulua:</b></label>
-    				<input type="text" placeholder="Sartu liburuaren titulua" name="titulua" required>
+    				<input type="text" placeholder="Sartu liburuaren titulua" name="titulua">
+                    <div id="titulua-error" style="color: red; font-size: 11px; font-style: italic; margin-top: -5px; margin-bottom: 5px;"></div>
             <label for="egilea"><b>Egilea:</b></label>
-            <input type="text" placeholder="Sartu liburuaren egilea" name="egilea" required>
+            <input type="text" placeholder="Sartu liburuaren egilea" name="egilea">
+            <div id="egilea-error" style="color: red; font-size: 11px; font-style: italic; margin-top: -5px; margin-bottom: 5px;"></div>
     				<label for="hizkuntza"><b>Hizkuntza:</b></label>
     				<select name="hizkuntza">
     					<option selected>Euskara</option>
@@ -37,16 +40,19 @@ session_start();
     					<option>Suspensea</option>
     					<option>Fantasia</option>
     					<option>Zientzia fikzioa</option>
-              <option>Mexikanoa</option>
+                        <option>Mexikanoa</option>
     				</select>  
     				<label for="data"><b>Data:</b></label>
-    				<input type="date" name="date" required>   
+    				<input type="date" name="date">   
     				<label for="sinopsia"><b>Sinopsia:</b></label>
     				<textarea id="sinopsia" name="sinopsia" rows="4" cols="50"></textarea>
+                    <div id="sinopsia-error" style="color: red; font-size: 11px; font-style: italic; margin-top: -5px; margin-bottom: 5px;"></div>
     				<label for="irudia"><b>Irudiaren url-a:</b></label>
-    				<input type="text" placeholder="Sartu irudiaren url-a" name="irudia" required> 
+    				<input type="text" placeholder="Sartu irudiaren url-a" name="irudia"> 
+                    <div id="irudia-error" style="color: red; font-size: 11px; font-style: italic; margin-top: -5px; margin-bottom: 5px;"></div>
             <label for="deskarga"><b>Deskarga url-a:</b></label>
-            <input type="text" placeholder="Sartu deskargarako url-a" name="deskarga" required> 
+            <input type="text" placeholder="Sartu deskargarako url-a" name="deskarga"> 
+            <div id="deskarga-error" style="color: red; font-size: 11px; font-style: italic; margin-top: -5px; margin-bottom: 5px;"></div>
     				<button type="submit">Gehitu liburua</button>
   				</div>
 			</form>

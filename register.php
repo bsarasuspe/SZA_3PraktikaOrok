@@ -2,67 +2,62 @@
 <html>
 	<?php include 'header.php'?>
   <?php include 'dbconfig.php'?>
-
-    <?php
-    function balidatu($datuak){
-        if (!preg_match("/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/i", $datuak["eposta"])){
-            return 'Eposta okerra';
-        }
-        else if (!preg_match("/^[a-zA-ZÀ-ÿ]{2,}(\s+[a-zA-ZÀ-ÿ]{2,})+$/", $datuak["izena"])){
-            return 'Izen abizen okerra';
-        }
-        else if (strlen($datuak["pasahitza"]) < 8){
-            return 'Pasahitz luzera okerra (gutxienez 8 karaktere)';
-        }
-        else if ($datuak["pasahitza"] != $datuak["pasahitza2"]){
-            return 'Bi pasahitzak ez dira berdinak';
-        }   
-    }
-    ?>
+  <script type="text/javascript" src="./js/RegisterValidation.js"></script>
 
 	<body>
 		<div id="loginKutxa">
 			<div id="loginKutxaTitle"><b>ERREGISTRATU</b></div>
-			<form action="" method="post">
+			<form name="form" id="form" action="" method="post" onsubmit="return RegisterValidation()">
   				<div class="container">
   					<br>
   					<label for="izena"><b>Izena abizenak:</b></label>
-    				<input type="text" placeholder="Sartu zure izen abizenak" name="izena" required>
+    				<input type="text" placeholder="Sartu zure izen abizenak" name="izena">
+                    <div id="izena-error" style="color: red; font-size: 11px; font-style: italic; margin-top: -5px; margin-bottom: 5px;"></div>
    					<label for="eposta"><b>Eposta:</b></label>
-    				<input type="email" placeholder="Sartu zure eposta" name="eposta" required>
+    				<input type="email" placeholder="Sartu zure eposta" name="eposta">
+                    <div id="eposta-error" style="color: red; font-size: 11px; font-style: italic; margin-top: -5px; margin-bottom: 5px;"></div>
     				<label for="pasahitza"><b>Pasahitza:</b></label>
-    				<input type="password" placeholder="Sartu zure pasahitza" name="pasahitza" required>   
+    				<input type="password" placeholder="Sartu zure pasahitza" name="pasahitza">   
     				<label for="pasahitza2"><b>Errepikatu pasahitza:</b></label>
-    				<input type="password" placeholder="Errepikatu pasahitza" name="pasahitza2" required>   
+    				<input type="password" placeholder="Errepikatu pasahitza" name="pasahitza2">
+                    <div id="pasahitza-error" style="color: red; font-size: 11px; font-style: italic; margin-top: -5px; margin-bottom: 5px;"></div>   
     				<button type="submit">Erregistratu</button>
   				</div>
 			</form>
-      <?php
+      <?php 
 include "DbConfig.php";
+$datuak = $_POST;
 if (isset($_POST['eposta'])) {
-    if (($arazoa = balidatu($_POST)) != ''){
-        echo "<script> alert('$arazoa')</script>";
-        return;
-    }
+    if(strlen($datuak["eposta"])>0 && strlen($datuak["izena"])>0 && strlen($datuak["pasahitza"])>0 && strlen($datuak["pasahitza2"])>0){
+        echo ("a");
+        if(preg_match("/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/", $datuak["eposta"])){
+            echo ("b");
+            if(strlen($datuak["pasahitza"]) > 8){
+                echo ("c");
+                if($datuak["pasahitza"] == $datuak["pasahitza2"]){
+                    global $zerbitzaria, $erabiltzailea, $gakoa, $db;
+                    $nireSQLI = new mysqli($zerbitzaria, $erabiltzailea, $gakoa, $db);
+                    echo ("d");
+                    if($nireSQLI->connect_error) {
+                        echo "<script> alert('DB-ra konexio bat egitean errore bat egon da. Berriro saiatu.')";
+                        return;
+                    }
 
-    global $zerbitzaria, $erabiltzailea, $gakoa, $db;
-    $nireSQLI = new mysqli($zerbitzaria, $erabiltzailea, $gakoa, $db);
+                    $sqlInsertQuestion = "INSERT INTO erabiltzaileak(eposta, izena, pasahitza, mota) 
+                                            VALUES ('$_POST[eposta]', '$_POST[izena]', '$_POST[pasahitza]', '0')";
 
-    if($nireSQLI->connect_error) {
-        echo "<script> alert('DB-ra konexio bat egitean errore bat egon da. Berriro saiatu.')";
-        return;
-    }
-
-    $sqlInsertQuestion = "INSERT INTO erabiltzaileak(eposta, izena, pasahitza, mota) 
-                            VALUES ('$_POST[eposta]', '$_POST[izena]', '$_POST[pasahitza]', '0')";
-
-    if (!$nireSQLI->query($sqlInsertQuestion)) {
-        $mezua = str_replace("'", "\'", $nireSQLI->error);
-        echo "<script>alert('Errorea datu-basean: $mezua')</script>";
-        return;
-    }
-    header("location: index.php");
+                    if (!$nireSQLI->query($sqlInsertQuestion)) {
+                        $mezua = str_replace("'", "\'", $nireSQLI->error);
+                        echo "<script>alert('Errorea datu-basean: $mezua')</script>";
+                        return;
+                    }
+                    header("location: index.php");
+                }
+            }
+        }
+    }  
 }
+
 ?>
 <span class="registerlogin-info">Dagoeneko erregistratuta bazaude, logeatu <a href="login.php">hemen</a>.</span>
 		</div>

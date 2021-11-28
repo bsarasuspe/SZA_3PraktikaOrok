@@ -10,7 +10,7 @@
 	</head>
 	<body>
 		<div id="header">
-			<div id="headertext">LIBURUTEGIA</div>
+			<div id="headertext"><a href="index.php">LIBURUTEGIA</a></div>
 		</div>
 		<div id="nav">
 			<div style="width:1000px;margin:auto;">
