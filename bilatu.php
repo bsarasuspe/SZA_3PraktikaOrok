@@ -69,11 +69,11 @@ session_start();
    <line x1="12" y1="6" x2="12" y2="19"></line>
    <line x1="21" y1="6" x2="21" y2="19"></line>
 </svg> Kategoriak: </b>
-	<div id="kategoria">Komedia</div>
-	<div id="kategoria">Suspensea</div>
-	<div id="kategoria">Fantasia</div>
-	<div id="kategoria">Zientzia-fikzioa</div>
-	<div id="kategoria">Mexikanoa</div>
+	<div id="kategoria"><a href="kategoria.php?kategoria=Komedia">Komedia</a></div>
+	<div id="kategoria"><a href="kategoria.php?kategoria=Suspensea">Suspensea</a></div>
+	<div id="kategoria"><a href="kategoria.php?kategoria=Fantasia">Fantasia</a></div>
+	<div id="kategoria"><a href="kategoria.php?kategoria=Zientzia-fikzioa">Zientzia-fikzioa</a></div>
+	<div id="kategoria"><a href="kategoria.php?kategoria=Mexikanoa">Mexikanoa</a></div>
 <br>
 <b><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chart-bar" width="16" height="16" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>

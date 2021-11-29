@@ -25,19 +25,15 @@
   				</div>
 			</form>
       <?php 
-include "DbConfig.php";
+include "dbconfig.php";
 $datuak = $_POST;
 if (isset($_POST['eposta'])) {
     if(strlen($datuak["eposta"])>0 && strlen($datuak["izena"])>0 && strlen($datuak["pasahitza"])>0 && strlen($datuak["pasahitza2"])>0){
-        echo ("a");
         if(preg_match("/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/", $datuak["eposta"])){
-            echo ("b");
             if(strlen($datuak["pasahitza"]) > 8){
-                echo ("c");
                 if($datuak["pasahitza"] == $datuak["pasahitza2"]){
                     global $zerbitzaria, $erabiltzailea, $gakoa, $db;
                     $nireSQLI = new mysqli($zerbitzaria, $erabiltzailea, $gakoa, $db);
-                    echo ("d");
                     if($nireSQLI->connect_error) {
                         echo "<script> alert('DB-ra konexio bat egitean errore bat egon da. Berriro saiatu.')";
                         return;
@@ -51,7 +47,7 @@ if (isset($_POST['eposta'])) {
                         echo "<script>alert('Errorea datu-basean: $mezua')</script>";
                         return;
                     }
-                    header("location: index.php");
+                    echo "<script> window.location.href = 'index.php';</script>";
                 }
             }
         }

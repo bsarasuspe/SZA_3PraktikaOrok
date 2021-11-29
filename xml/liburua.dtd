@@ -1,0 +1,12 @@
+<!ELEMENT liburuak (liburua)*>
+<!ATTLIST liburuak azkenid IDREF #REQUIRED>
+<!ELEMENT liburua (titulua, egilea, hizkuntza, kategoria, data, sinopsia, irudia, deskarga)>
+<!ATTLIST liburua id ID #REQUIRED>
+<!ELEMENT titulua (#PCDATA)>
+<!ELEMENT egilea (#PCDATA)>
+<!ELEMENT hizkuntza (#PCDATA)>
+<!ELEMENT kategoria (#PCDATA)>
+<!ELEMENT data (#PCDATA)>
+<!ELEMENT sinopsia (#PCDATA)>
+<!ELEMENT irudia (#PCDATA)>
+<!ELEMENT deskarga (#PCDATA)>

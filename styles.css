@@ -168,6 +168,7 @@ button:hover {
 	border-radius:5px;
 	margin-top:5px;
 	cursor: pointer;
+  text-decoration: none;
 }
 
 #kategoria:hover{
@@ -231,7 +232,7 @@ button:hover {
 }
 
 #liburuaGehituContainer{
-	width:500px;
+	width:700px;
 	color:#442727;
 	min-height:100px;
 	background-color: #fffaf7;
