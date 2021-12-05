@@ -61,7 +61,7 @@ session_start();
                                     echo '<center><img src="images/liburua.png" width="150"><br><b>Liburua ez da existitzen.</b></center>';
                                 }
                             }else{
-                                echo '<center><img src="images/liburua.png" width="150"><br><b>Liburua ez da existitzen.</b></center>';
+                                echo "<script> window.location.href = 'kudeatuliburuak.php';</script>";      
                             }
                     ?>
 				</div>

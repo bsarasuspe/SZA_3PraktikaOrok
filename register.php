@@ -10,7 +10,7 @@
 			<form name="form" id="form" action="" method="post" onsubmit="return RegisterValidation()">
   				<div class="container">
   					<br>
-  					<label for="izena"><b>Izena abizenak:</b></label>
+  					<label for="izena"><b>Izen abizenak:</b></label>
     				<input type="text" placeholder="Sartu zure izen abizenak" name="izena">
                     <div id="izena-error" style="color: red; font-size: 11px; font-style: italic; margin-top: -5px; margin-bottom: 5px;"></div>
    					<label for="eposta"><b>Eposta:</b></label>

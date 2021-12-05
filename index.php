@@ -72,7 +72,7 @@ session_start();
 	<div id="kategoria"><a href="kategoria.php?kategoria=Komedia">Komedia</a></div>
 	<div id="kategoria"><a href="kategoria.php?kategoria=Suspensea">Suspensea</a></div>
 	<div id="kategoria"><a href="kategoria.php?kategoria=Fantasia">Fantasia</a></div>
-	<div id="kategoria"><a href="kategoria.php?kategoria=Zientzia-fikzioa">Zientzia-fikzioa</a></div>
+	<div id="kategoria"><a href="kategoria.php?kategoria=Zientzia%20fikzioa">Zientzia fikzioa</a></div>
 	<div id="kategoria"><a href="kategoria.php?kategoria=Mexikanoa">Mexikanoa</a></div>
 <br>
 <b><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chart-bar" width="16" height="16" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
