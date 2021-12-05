@@ -5,6 +5,16 @@ session_start();
 <html>
 	<?php include 'header.php'?>
   <?php include 'dbconfig.php';?>
+      <?php
+      if(isset($_SESSION["kautotua"])){
+                if (($_SESSION["kautotua"] != "BAI") || ($_SESSION["mota"] != 1)) {
+            echo "<script> window.location.href = 'index.php';</script>";
+            exit();
+        }
+      }else{
+        echo "<script> window.location.href = 'index.php';</script>";
+      }
+    ?>
 	<body>
 		<div id="content">
 			<div id="liburuaGehituContainer">
