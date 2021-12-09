@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 4.9.5
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 20-11-2021 a las 19:47:21
--- Versión del servidor: 10.4.21-MariaDB
--- Versión de PHP: 7.3.31
+-- Servidor: localhost:3306
+-- Tiempo de generación: 09-12-2021 a las 10:13:07
+-- Versión del servidor: 10.5.12-MariaDB
+-- Versión de PHP: 7.3.32
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,8 +19,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `sza`
+-- Base de datos: `id17980161_sza`
 --
+CREATE DATABASE IF NOT EXISTS `id17980161_sza` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+USE `id17980161_sza`;
 
 -- --------------------------------------------------------
 
@@ -40,7 +43,10 @@ CREATE TABLE `erabiltzaileak` (
 
 INSERT INTO `erabiltzaileak` (`eposta`, `izena`, `pasahitza`, `mota`) VALUES
 ('admin@ehu.eus', 'Admin Admin', 'admin000', 1),
-('bsarasua@ehu.eus', 'Beñat Sarasua', 'bsarasua1', 0);
+('bsarasua@ehu.eus', 'Beñat Sarasua', 'bsarasua1', 0),
+('inakiurdan@gmail.com', 'Iñaki Urdangarin', 'inakiurdan', 1),
+('irakurlea@ehu.eus', 'Irakurlea Irakurlea', 'irakurlea', 0),
+('manex@ehu.eus', 'Manex Atxa Landa', 'manexatxa', 1);
 
 -- --------------------------------------------------------
 
@@ -58,8 +64,18 @@ CREATE TABLE `gustoko_liburuak` (
 --
 
 INSERT INTO `gustoko_liburuak` (`user_eposta`, `liburu_id`) VALUES
+('admin@ehu.eus', 1),
 ('admin@ehu.eus', 2),
-('bsarasua@ehu.eus', 2);
+('admin@ehu.eus', 5),
+('admin@ehu.eus', 13),
+('admin@ehu.eus', 21),
+('bsarasua@ehu.eus', 2),
+('elorrira14@gmail.com', 13),
+('elorrira14@gmail.com', 16),
+('inakiurdan@gmail.com', 1),
+('inakiurdan@gmail.com', 21),
+('manex@ehu.eus', 12),
+('manex@ehu.eus', 20);
 
 --
 -- Índices para tablas volcadas
